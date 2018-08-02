@@ -5,6 +5,7 @@
 #   _GITHUB_USERNAME
 #   _KMS_KEY 
 #   _KMS_KEYRING
+#   _GCR_NAME
 #
 
 steps:
@@ -57,7 +58,7 @@ steps:
 
   # Clone the helloworld-infrastructure repo which holds the Kubernetes
   # deployment manifests.
-  - name: 'gcr.io/hightowerlabs/hub'
+  - name: 'gcr.io/${_GCR_NAME}/hub'
     env:
       - 'HUB_CONFIG=/config/hub'
       - 'KUBECONFIG=/kube/config'
